@@ -14,7 +14,7 @@ import {sampleData} from '../../../app/api/sampleData';
         <EventList events={events} />
         </Grid.Column>
         <Grid.Column width={6} style={{marginTop:100}}>
-        { formOpen && <EventForm setFormOpen={setFormOpen}/> }
+        { formOpen && <EventForm setFormOpen={setFormOpen} setEvents={setEvents}/> }
         </Grid.Column>
         </Grid>
     )
