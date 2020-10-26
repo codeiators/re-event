@@ -1,5 +1,6 @@
 import cuid from 'cuid';
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Form, Header, Input, Segment } from 'semantic-ui-react';
 
 export default function EventForm({setFormOpen,setEvents,createEvent,selectedEvent,updateEvent}) {
@@ -32,7 +33,7 @@ export default function EventForm({setFormOpen,setEvents,createEvent,selectedEve
      }
     return (
 
-        <Segment clearing>
+        <Segment clearing style={{marginTop:80}}>
 
         <Header content= {selectedEvent ?'Edit the Event':'Create new Event'} />
         <Form onSubmit={handleFormSubmit}>
@@ -55,7 +56,7 @@ export default function EventForm({setFormOpen,setEvents,createEvent,selectedEve
         <Input type='date' placeholder='Date'  name='date' value={values.date} onChange={(e) => handleInputChange(e)} />
         </Form.Field>
         <Button type='submit'  floated='right' positive content='Submit'/>
-        <Button type='submit' onClick={() => setFormOpen(false)} floated='right' content='Cancel' />
+        <Button type='submit' as={Link} to='/events' floated='right' content='Cancel' />
         </Form>
         
         </Segment>
